@@ -1,7 +1,7 @@
 const quotes = [
   {
-    quote: "Have fun while you live.",
-    author: "Jason",
+    quote: "Imagine where you will be, and it will be so.",
+    author: "Gladiator",
   },
   {
     quote: "Try, fail, then try.",

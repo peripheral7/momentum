@@ -8,6 +8,31 @@ body {
   font-size: 16px;
   font-smooth: always;
   box-sizing: border-box;
+
+
+  font-family: 'Oswald', sans-serif;
+}
+
+/* #top-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  font-family: sans-serif;
+} */
+
+.drag-block {
+  user-select: none;
+}
+
+#background {
+  z-index: -1;
+}
+
+/* optional css fade in animation */
+iframe {
+  transition: opacity 500ms ease-in-out;
+  transition-delay: 250ms;
 }
 
 img {
@@ -22,45 +47,62 @@ img {
   opacity: 80%;
 }
 
+
+h1 {
+  font-size: 5rem;
+}
+
+.todo {
+
+  margin: auto;
+}
+
 /* list style */
 ul {
-  position: relative;
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
 
-  max-width: 250px;
-  width: 100%;
+  list-style: none;
+  margin: auto;
+  padding: 0px;
+  width: 50%;
+  height: 200px;
+  overflow: auto;
+
 }
 
 ul li {
+  position: relative;
   padding: 20px;
   margin-bottom: 5px;
   border-bottom: 1px solid #efefef;
   font-size: 16px;
   transition: background-color 0.1s linear;
+  font-weight: 700;
 }
 
-ul li:hover{
+ul li:hover {
   background-color: #ffffff42;
 }
 
-ul li:before {
-  display: inline-block;
-  vertical-align: middle;
+li span {
+  font-size: 2rem;
 }
 
 li button {
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+  padding: 20px 50px;
+
   display: block;
 
-  float: right;
-  width: 70px;
+  margin-right: 5px;
   border: none;
 
   border-radius: 15px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   transition: 0.2s;
+  text-align: center;
 
   background-color: rgba(255, 255, 255, 0);
   color: #1e6b7b;
@@ -71,9 +113,99 @@ li button:hover {
   color: #d7fff1;
 }
 
-
 /* list style ENDS */
+form {
+  font-size: 1.5rem;
+  margin: 1rem;
+}
 
+/* Modern Input form */
+
+.form {
+  width: 20%;
+  position: relative;
+  height: 50px;
+  overflow: hidden;
+  margin: 1rem auto;
+}
+
+.form input {
+  width: 100%;
+  height: 100%;
+  color: #595f6e;
+  /* padding-top: 10px; */
+  border: none;
+  outline: none;
+  font-size: 1.6rem;
+  background-color: #ffffff56;
+  font-weight: 600;
+}
+
+.form label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid black;
+  font-size: 1.4rem;
+}
+
+.form label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 3px solid #5fa8d3;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.content-name {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.form input:focus+.label-name .content-name,
+.form input:valid+.label-name .content-name {
+  transform: translateY(-150%);
+  font-size: 14px;
+  color: #5fa8d3;
+}
+
+.form input:focus .label-name::after,
+.form input:valid+.label-name:after {
+  transform: translateX(0%);
+}
+
+/* Modern Input form ENDS */
+
+.quote {
+  font-size: 1.5rem;
+  background-color: #efefef57;
+  width: fit-content;
+  padding: 10px;
+  margin: 14px auto;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 800;
+}
+
+#weather {
+  font-size: 2rem;
+  background-color: #efefef57;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#clock {
+  font-size: 20rem;
+}
 
 .todo {
   position: relative;
